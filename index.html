@@ -40,7 +40,8 @@
       }
 
       .ticker,
-      .links {
+      .links,
+      .meme-line {
         position: fixed;
         z-index: 2;
       }
@@ -104,6 +105,45 @@
         opacity: 0.86;
       }
 
+      .meme-line {
+        max-width: min(31vw, 430px);
+        color: #dfffbb;
+        font-size: clamp(24px, 4.2vw, 62px);
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: 0;
+        text-transform: lowercase;
+        -webkit-text-stroke: clamp(1px, 0.16vw, 2px) var(--ink);
+        text-shadow:
+          0 3px 0 #163800,
+          0 0 12px rgba(140, 255, 0, 0.72),
+          0 0 26px rgba(76, 255, 0, 0.42);
+        pointer-events: none;
+      }
+
+      .meme-line.left {
+        top: 28%;
+        left: clamp(18px, 4vw, 58px);
+        transform: rotate(-7deg);
+      }
+
+      .meme-line.right {
+        top: 30%;
+        right: clamp(18px, 4vw, 58px);
+        text-align: right;
+        transform: rotate(7deg);
+      }
+
+      .meme-line.bottom {
+        right: 25%;
+        bottom: clamp(22px, 5vw, 66px);
+        max-width: min(42vw, 560px);
+        color: var(--green);
+        font-size: clamp(28px, 5vw, 72px);
+        text-align: center;
+        transform: rotate(-2deg);
+      }
+
       @media (max-width: 620px) {
         .screen {
           background-position: center;
@@ -121,6 +161,28 @@
           flex: 1;
           padding-inline: 10px;
         }
+
+        .meme-line {
+          max-width: 45vw;
+          font-size: clamp(19px, 7vw, 38px);
+        }
+
+        .meme-line.left {
+          top: 23%;
+          left: 12px;
+        }
+
+        .meme-line.right {
+          top: 31%;
+          right: 12px;
+        }
+
+        .meme-line.bottom {
+          right: 16px;
+          bottom: 86px;
+          max-width: 58vw;
+          font-size: clamp(24px, 8vw, 44px);
+        }
       }
     </style>
   </head>
@@ -131,6 +193,9 @@
         <a class="button" href="https://x.com/Early_solana" target="_blank" rel="noreferrer">twt</a>
         <span class="button disabled">contract coming soon</span>
       </nav>
+      <div class="meme-line left">too late for pirates</div>
+      <div class="meme-line right">too early for space travel</div>
+      <div class="meme-line bottom">perfectly early</div>
     </main>
   </body>
 </html>
