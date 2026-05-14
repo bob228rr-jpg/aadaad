@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>$early</title>
+    <style>
+      :root {
+        --green: #8cff00;
+        --deep: #061400;
+        --ink: #001000;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        overflow: hidden;
+        background: var(--deep);
+        font-family: "Marker Felt", "Comic Sans MS", "Comic Sans", "Bradley Hand", cursive;
+      }
+
+      .screen {
+        position: relative;
+        min-height: 100vh;
+        background-image:
+          linear-gradient(180deg, rgba(0, 12, 0, 0.04), rgba(0, 12, 0, 0.18)),
+          url("assets/early.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .ticker,
+      .links {
+        position: fixed;
+        z-index: 2;
+      }
+
+      .ticker {
+        top: clamp(16px, 3vw, 34px);
+        left: clamp(16px, 3vw, 34px);
+        color: var(--green);
+        font-size: clamp(38px, 8vw, 104px);
+        line-height: 0.92;
+        letter-spacing: 0;
+        text-transform: lowercase;
+        font-weight: 900;
+        transform: rotate(-2deg);
+        -webkit-text-stroke: clamp(1px, 0.18vw, 2px) var(--ink);
+        text-shadow:
+          0 3px 0 #163800,
+          0 0 14px rgba(140, 255, 0, 0.82),
+          0 0 34px rgba(76, 255, 0, 0.52);
+      }
+
+      .links {
+        top: clamp(16px, 3vw, 34px);
+        right: clamp(16px, 3vw, 34px);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgba(179, 255, 94, 0.8);
+        border-radius: 8px;
+        padding: 10px 15px;
+        background: rgba(5, 23, 0, 0.58);
+        color: #dfffbb;
+        box-shadow:
+          0 0 18px rgba(117, 255, 0, 0.35),
+          inset 0 0 18px rgba(117, 255, 0, 0.12);
+        font-size: clamp(13px, 1.5vw, 18px);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: 0;
+        text-decoration: none;
+        text-transform: lowercase;
+        text-shadow: 0 2px 0 #052100;
+        backdrop-filter: blur(10px);
+      }
+
+      .button:hover {
+        border-color: var(--green);
+        color: #ffffff;
+        transform: translateY(-1px);
+      }
+
+      .button.disabled {
+        cursor: default;
+        opacity: 0.86;
+      }
+
+      @media (max-width: 620px) {
+        .screen {
+          background-position: center;
+        }
+
+        .links {
+          top: auto;
+          right: 14px;
+          bottom: 14px;
+          left: 14px;
+          justify-content: space-between;
+        }
+
+        .button {
+          flex: 1;
+          padding-inline: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="screen" aria-label="$early">
+      <div class="ticker">$early</div>
+      <nav class="links" aria-label="links">
+        <a class="button" href="https://x.com/Early_solana" target="_blank" rel="noreferrer">twt</a>
+        <span class="button disabled">contract coming soon</span>
+      </nav>
+    </main>
+  </body>
+</html>
